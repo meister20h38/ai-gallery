@@ -43,7 +43,6 @@ def generate_image_via_ws(prompt_text, workflow_data):
     ws.connect(f"ws://{SERVER_ADDRESS}/ws?clientId={CLIENT_ID}")
     
     # 1. プロンプトとSeedの書き換え
-    # (JSONのIDは環境に合わせて調整してください。前回のIDを使用しています)
     workflow_data["6"]["inputs"]["text"] = prompt_text
     workflow_data["15"]["inputs"]["text"] = prompt_text # Refiner用
     workflow_data["10"]["inputs"]["noise_seed"] = random.randint(1, 10**14)
@@ -113,4 +112,5 @@ if st.button("画像を生成する (Generate)"):
                 
         except Exception as e:
             st.error(f"エラーが発生しました: {e}")
+
             status_text.text("❌ エラー")

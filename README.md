@@ -1,1 +1,1 @@
-# ai-gallery
+# ComfyUI スマホで生成
